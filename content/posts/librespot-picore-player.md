@@ -1,42 +1,21 @@
 ---
 title: "Librespot Picore Player"
 date: 2022-11-05T20:14:03+01:00
-description: 'As soon as Winston had dealt with each of the messages, he clipped his speakwritten corrections to the appropriate copy of the Times and pushed them into the pneumatic tube. '
+description: 'How to build librespot for picore player'
 image: images/cctv.jpeg
-draft: true
 ---
 
-# Librespot for piCore Player
+I wanted a stable headless Spotify player for my living room. It has to run on a RaspberryPi and boot fast in order to turn it on only when needed with a switch.
+We will build a `tcz` extension to install on piCore Player. The purpose is to gain stability and performance compared to the LMS version.
 
-This is a tcz extension to install on piCore Player.
-The purpose is to gain stability and performance compared to the LMS version.
+Sources: 
+- [librespot](https://github.com/librespot-org/librespot)
+- [PiCore Player](https://www.picoreplayer.org) 
 
-## installation
 
-create the extension
-```bash
-mksquashfs pcp-librespot pcp-librespot.tcz
-```
-put it on pcp
-```bash
-scp pcp-librespot.tcz tc@pcp.local:
-ssh tc@pcp.local
-mv -v pcp-librespot.tcz /etc/sysconfig/tcedir/optional
-```
-activate start up on boot
-```bash
-echo pcp-librespot.tcz >> /etc/sysconfig/tcedir/onboot.lst
-echo "/usr/local/etc/init.d/librespot start" >> /opt/bootlocal.sh 
-pcp bu
-```
+# Build
 
-reboot or launch the extention with
-```bash
-tce-load -i pcp-librespot
-```
-## creation
-
-Librespot must be cross-compiled and placed in the `sbin` folder as `librespot`. Don't forget to `chmod +x librespot` before creating the tcz extension.
+Librespot must be cross-compiled and placed in the `sbin` folder as `librespot`. Don't forget to `chmod +x librespot` before creating the `tcz` extension.
 
 ### Cross Compilation
 Cross compilation of Librespot for RaspberryPi on Linux (raspbian, TinyCoreLinux, PiCore Linux...)
@@ -141,3 +120,31 @@ chmod +x ../pcp-librespot/usr/local/sbin/librespot
 ```
 you can create the extension go to the begining of the readme
 
+# Installation
+
+## create extension to be installed
+
+create the extension
+```bash
+mksquashfs pcp-librespot pcp-librespot.tcz
+```
+
+## Install librespot extension on pcp
+
+send it on raspi running pcp
+```bash
+scp pcp-librespot.tcz tc@pcp.local:
+ssh tc@pcp.local
+mv -v pcp-librespot.tcz /etc/sysconfig/tcedir/optional
+```
+activate start up on boot
+```bash
+echo pcp-librespot.tcz >> /etc/sysconfig/tcedir/onboot.lst
+echo "/usr/local/etc/init.d/librespot start" >> /opt/bootlocal.sh 
+pcp bu
+```
+
+reboot or launch the extention with
+```bash
+tce-load -i pcp-librespot
+```
