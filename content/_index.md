@@ -1,6 +1,9 @@
 ---
-title: You don't start out writing good stuff
-description: The hallway smelt of boiled cabbage and old rag mats.
+title: I build stuff and dismount things
+description: I'm a new technologies enthousiast
 ---
 
-The hallway smelt of boiled cabbage and old rag mats. At one end of it a coloured poster, too large for indoor display, had been tacked to the wall. It depicted simply an enormous face, more than a metre wide: the face of a man of about forty-five, with a heavy black moustache and ruggedly handsome features. Winston made for the stairs. It was no use trying the lift. 
+I'm a computer enthousiast. I'm specialised in Linux and embedded systems. I like to dismount things in order to understand how they work.
+I like art, electronics and to automate things. 
+
+Here is the blog of the personnal project I've one in my life. Enjoy :)
