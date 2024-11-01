@@ -12,7 +12,7 @@ Here are some modification I made to improve performances.
 
 ### SSH for security
 add my ssh key
-```sh
+```bash
 mkdir .ssh
 vi .ssh/authorized_keys
 ```
@@ -34,14 +34,14 @@ We need to keep `spotify` and `shairport-sync` and disable the following:
 disable useless services:
  * hifiberry data collector
  * roon
-```sh
+```bash
 systemctl stop datacollector.service
 systemctl disable datacollector.service
 systemctl stop raat
 systemctl disable raat
 ```
 I'm on RaspberryPi 2 so I don't use bluetooth or WiFi
-```sh
+```bash
 systemctl stop wpa_supplicant
 systemctl disable wpa_supplicant
 systemctl stop wpa_supplicant@wlan0
