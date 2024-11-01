@@ -2,7 +2,7 @@
 title: "macOS configuration after a fresh install"
 date: 2023-01-20
 description: "A list of command and configuration to have clean environment under macOS"
-image: images/macos.jpeg
+image: images/macos.jpg
 ---
 
 Don't write `.DS_Store` file on removable devices: 

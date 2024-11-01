@@ -2,7 +2,7 @@
 title: "librespot on piCorePlayer"
 date: 2022-11-05
 description: "How to build librespot for piCorePlayer"
-image: images/picore-logo.jpeg
+image: images/picore-logo.png
 ---
 
 # Introduction
