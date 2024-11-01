@@ -1,7 +1,7 @@
 ---
-title: "Librespot Picore Player"
-date: 2022-11-05T20:14:03+01:00
-description: 'How to build librespot for picore player'
+title: "librespot on piCorePlayer"
+date: 2022-11-05
+description: "How to build librespot for piCorePlayer"
 image: images/picore-logo.jpeg
 ---
 
@@ -61,14 +61,14 @@ We need to download arm `gnueabihf` version of needed libraries. We search for a
  * portaudio and portaudio dev for portaudio backend
  * libjack and libjack dev for jack backend (default in librespot)
 
-| Lib | Source | Name of package |
-|-----|--------|-----------------|
-| portaudio19 | http://ftp.fr.debian.org/debian/pool/main/p/portaudio19/ | libportaudio2_19.6.0-1.1_armhf.deb |
+| Lib             | Source                                                   | Name of package                                                                    |
+| --------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| portaudio19     | http://ftp.fr.debian.org/debian/pool/main/p/portaudio19/ | libportaudio2_19.6.0-1.1_armhf.deb                                                 |
 | portaudio19 dev | http://ftp.fr.debian.org/debian/pool/main/p/portaudio19/ | portaudio19-dev_19.6.0-1+deb10u1_armhf.deb or portaudio19-dev_19.6.0-1.1_armhf.deb |
-| alsa| http://ftp.fr.debian.org/debian/pool/main/a/alsa-lib/ | libasound2_1.2.4-1.1_armhf.deb |
-| alsa dev |  http://ftp.fr.debian.org/debian/pool/main/a/alsa-lib/ | libasound2-dev_1.2.4-1.1_armhf.deb |
-| libjack | http://ftp.fr.debian.org/debian/pool/main/j/jackd2/ | libjack-jackd2-0_1.9.17~dfsg-1_armhf.deb |
-| libjack dev | http://ftp.fr.debian.org/debian/pool/main/j/jackd2/ | libjack-jackd2-dev_1.9.17~dfsg-1_armhf.deb |
+| alsa            | http://ftp.fr.debian.org/debian/pool/main/a/alsa-lib/    | libasound2_1.2.4-1.1_armhf.deb                                                     |
+| alsa dev        | http://ftp.fr.debian.org/debian/pool/main/a/alsa-lib/    | libasound2-dev_1.2.4-1.1_armhf.deb                                                 |
+| libjack         | http://ftp.fr.debian.org/debian/pool/main/j/jackd2/      | libjack-jackd2-0_1.9.17~dfsg-1_armhf.deb                                           |
+| libjack dev     | http://ftp.fr.debian.org/debian/pool/main/j/jackd2/      | libjack-jackd2-dev_1.9.17~dfsg-1_armhf.deb                                         |
 
 We also need the armhf libc 
 ```bash
