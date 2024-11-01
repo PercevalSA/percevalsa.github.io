@@ -1,6 +1,6 @@
 ---
-title: How to configure my macbook after a new install
-date: 2022-11-05
+title: "macOS configuration after a fresh install"
+date: 2023-01-20
 description: "A list of command and configuration to have clean environment under macOS"
 image: images/macos.jpeg
 ---

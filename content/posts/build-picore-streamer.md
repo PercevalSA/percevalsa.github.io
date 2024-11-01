@@ -1,7 +1,7 @@
 ---
-title: Build a PiCore Internet Only Player 
+title: "Build a piCore Internet Only Player"
 date: 2022-11-05
-description: "I don't have alocal music library so I only stream using Spotify."
+description: "I don't have a local music library so I only stream using Spotify."
 image: images/cctv2.jpeg
 draft: true
 ---

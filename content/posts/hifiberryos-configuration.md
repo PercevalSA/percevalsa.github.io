@@ -1,6 +1,7 @@
 ---
-title: "HifiBerry OS configuration for streaming use only"
-date: 2022-11-05
+title: "HifiBerry OS configuration"
+date: 2022-10-20
+description: "How to build librespot for picore player"
 image: https://www.hifiberry.com/wp-content/uploads/2020/01/filter.jpg
 ---
 
