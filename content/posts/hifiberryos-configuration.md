@@ -1,31 +1,43 @@
 ---
 title: "HifiBerry OS configuration for streaming use only"
 date: 2022-11-05
-draft: true
+image: https://www.hifiberry.com/wp-content/uploads/2020/01/filter.jpg
 ---
 
-# HifiBerry OS
-My personnal configuration
+# HifiBerry OS Customisations
 
+Before moving to my custom version of piCorePlayer with my own Spotify extension I used to run HifiBerry on my raspberryPi.
+Here are some modification I made to improve performances.
+
+### SSH for security
 add my ssh key
 ```sh
 mkdir .ssh
 vi .ssh/authorized_keys
 ```
+Configure your ssh server to allow ket authentication only. Refuse passwords auth!
 
-players vailable: `SERVICES="spotify raat mpd shairport-sync squeezelite bluealsa-aplay alsaloop dlnampris mopidy upmpdcli"`
+### disable useless pieces
 
+disable useless streaming services. I only need airport and spotify.
+We need to keep `spotify` and `shairport-sync` and disable the following:
+ * `raat`
+ * `mpd`
+ * `squeezelite`
+ * `bluealsa-aplay`
+ * `alsaloop`
+ * `dlnampris`
+ * `mopidy`
+ * `upmpdcli`
 
 disable useless services:
  * hifiberry data collector
  * roon
-
 ```sh
 systemctl stop datacollector.service
 systemctl disable datacollector.service
 systemctl stop raat
 systemctl disable raat
-
 ```
 I'm on RaspberryPi 2 so I don't use bluetooth or WiFi
 ```sh
