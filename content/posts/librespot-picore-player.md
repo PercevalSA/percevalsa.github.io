@@ -7,6 +7,8 @@ image: images/picore-logo.jpeg
 
 # Introduction
 
+All the code is available in [my github repo](https://github.com/PercevalSA/pcp-librespot) 
+
 I wanted a stable headless Spotify player for my living room. It has to run on a RaspberryPi and boot fast in order to turn it on only when needed with a switch.
 One of the solution would be Volumio or HifiBerry but they take too much time to boot. [piCorePlayer](https://www.picoreplayer.org/) is a good alternative but it has too much stuff installed by default and the Spotify extension is based on an outdated extension. I would use something based on [piCore](https://iotbyhvm.ooo/picore-tiny-core-linux-on-raspberry-pi/) which is the port of [Tiny Core Linux](http://www.tinycorelinux.net/) to the RaspberryPi. piCorePlayer is based on piCore. 
 To stream spotify we will use [librespot](https://github.com/librespot-org/librespot). There is no librespote package for Tiny Core Linux and therefore for piCore. Therefore we need to build our own Spotify package. The purpose is to gain stability and performance compared to the piCorePlayer version. 
