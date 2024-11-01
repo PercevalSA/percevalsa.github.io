@@ -2,13 +2,25 @@
 title: "Librespot Picore Player"
 date: 2022-11-05T20:14:03+01:00
 description: 'How to build librespot for picore player'
-image: images/cctv.jpeg
+image: images/picore-logo.jpeg
 ---
 
-I wanted a stable headless Spotify player for my living room. It has to run on a RaspberryPi and boot fast in order to turn it on only when needed with a switch.
-We will build a `tcz` extension to install on piCore Player. The purpose is to gain stability and performance compared to the LMS version.
+# Introduction
 
-Sources: 
+I wanted a stable headless Spotify player for my living room. It has to run on a RaspberryPi and boot fast in order to turn it on only when needed with a switch.
+One of the solution would be Volumio or HifiBerry but they take too much time to boot. [piCorePlayer](https://www.picoreplayer.org/) is a good alternative but it has too much stuff installed by default and the Spotify extension is based on an outdated extension. I would use something based on [piCore](https://iotbyhvm.ooo/picore-tiny-core-linux-on-raspberry-pi/) which is the port of [Tiny Core Linux](http://www.tinycorelinux.net/) to the RaspberryPi. piCorePlayer is based on piCore. 
+To stream spotify we will use [librespot](https://github.com/librespot-org/librespot). There is no librespote package for Tiny Core Linux and therefore for piCore. Therefore we need to build our own Spotify package. The purpose is to gain stability and performance compared to the piCorePlayer version. 
+For the OS we have two solutions: 
+1. use piCorePlayer and remove everything that is not needed and install only my Spotify module;
+2. start from a bare piCore image. 
+
+I finally started from piCorePLayer because it configures my DAC out of the box. In the future I would migrate to a bare piCore version.
+
+## Requirements
+
+To install something on TinyCore Linux we need to build a `tcz` extension. a `tcz`extension is then mounted at boot as `squashfs`. This allows to fast boot. 
+
+Sources:
 - [librespot](https://github.com/librespot-org/librespot)
 - [PiCore Player](https://www.picoreplayer.org) 
 
@@ -19,7 +31,7 @@ Librespot must be cross-compiled and placed in the `sbin` folder as `librespot`.
 
 ### Cross Compilation
 Cross compilation of Librespot for RaspberryPi on Linux (raspbian, TinyCoreLinux, PiCore Linux...)
-You must be on Debian 11 minimum for the cross compilation to work(because au libs version)
+You must be on Debian 11 minimum for the cross compilation to work(because of libs version dependencies)
 
 ### Install cross-compilation tools
 
@@ -34,7 +46,15 @@ source $HOME/.cargo/env
 ```
 
 ### Install Libraries
-We need to download arm gnueabihf version of needed libraries. We search for armhf versions in the repos. Download only the lib you need for your  backend:
+
+Create a folder where you will work.
+```bash
+cd 
+mkdir -p pcp-librespot/downloads/
+cd pcp-librespot/downloads
+```
+
+We need to download arm `gnueabihf` version of needed libraries. We search for armhf versions in the repos. Download only the lib you need for your  backend:
  * alsa and alsa dev for alsa backend
  * portaudio and portaudio dev for portaudio backend
  * libjack and libjack dev for jack backend (default in librespot)
@@ -53,29 +73,28 @@ We also need the armhf libc
 wget ftp.fr.debian.org/debian/pool/main/g/gcc-10/libstdc++6_10.2.1-6_armhf.deb
 ```
 
-We need to configure the environement with a sysroot where we put all the libs needed for cross-compilation as librespot for arm can't use x86 libs.
+
+### environment
+
+If you still in `downloads` folder go back with `cd ..` else `cd pcp-librespot`
+We need to configure the environement with a `sysroot` where we put all the libs needed for cross-compilation as librespot for arm can't use x86 libs.
 ```bash
-cd librespot
 mkdir sysroot
 ```
-Go where you've download the libs and decompress packages in `librespot/sysroot` folder.
+Go where you've download the libs and decompress packages in `pcp-librespot/sysroot` folder.
 ```bash
-for a in $(ls);do ar p $a data.tar.xz | tar -xv -J -C $HOME/pcp-librespot/librespot/sysroot;done
+for a in $(ls $HOME/pcp-librespot/downloads);do ar p $a data.tar.xz | tar -xv -J -C $HOME/pcp-librespot/sysroot;done
 ```
 
 ### build
 get the librespot sources
-```bash
-git submodule update --init --depth 1
-```
-or
 ```bash
 git clone https://github.com/librespot-org/librespot.git
 ```
 
 Configure rust for cross-compilation
 ```bash
-echo "arm-linux-gnueabihf-gcc --sysroot $HOME/sysroot \"\$@\"" >> ./cargo/bin/gcc-sysroot
+echo "arm-linux-gnueabihf-gcc --sysroot $HOME/pcp-librespot/sysroot \"\$@\"" >> ./cargo/bin/gcc-sysroot
 chmod +x .cargo/bin/gcc-sysroot 
 
 echo <EOF>> $HOME/.cargo/config
@@ -88,9 +107,9 @@ linker = "gcc-sysroot"
 EOF
 
 export PKG_CONFIG_ALLOW_CROSS=1
-export PKG_CONFIG_SYSROOT_DIR=$HOME/librespot/sysroot/
+export PKG_CONFIG_SYSROOT_DIR=$HOME/pcp-librespot/sysroot/
 export PKG_CONFIG_DIR
-export PKG_CONFIG_PATH=$HOME/librespot/sysroot/usr/lib/arm-linux-gnueabihf/pkgconfig/
+export PKG_CONFIG_PATH=$HOME/pcp-librespot/sysroot/usr/lib/arm-linux-gnueabihf/pkgconfig/
 ```
 
 configure librespot build for cross-compilation
@@ -113,25 +132,27 @@ cargo build --target=armv7-unknown-linux-gnueabihf --no-default-features --featu
 you might need to specify  `-L "/usr/lib/arm-linux-gnueabihf"` for building.
 
 
-copy the binary into the package
+Create a folder to build the package and copy the binary into the package folder
 ```bash
-cp target/armv7-unknown-linux-gnueabihf/release/librespot ../pcp-librespot/usr/local/sbin/
-chmod +x ../pcp-librespot/usr/local/sbin/librespot
+cd $HOME/pcp-librespot
+mkdir -p package/usr/local/sbin/
+cp target/armv7-unknown-linux-gnueabihf/release/librespot package/usr/local/sbin/
+chmod +x package/usr/local/sbin/librespot
 ```
-you can create the extension go to the begining of the readme
-
-# Installation
+Now we can buid a Tiny Core package: an extension.
 
 ## create extension to be installed
 
 create the extension
 ```bash
-mksquashfs pcp-librespot pcp-librespot.tcz
+mksquashfs package pcp-librespot.tcz
 ```
 
-## Install librespot extension on pcp
+# Installation
 
-send it on raspi running pcp
+### Install librespot extension on pcp
+
+send it on your RaspberryPi running piCorePlayer:
 ```bash
 scp pcp-librespot.tcz tc@pcp.local:
 ssh tc@pcp.local
@@ -148,3 +169,5 @@ reboot or launch the extention with
 ```bash
 tce-load -i pcp-librespot
 ```
+
+And that's it. A fast booting Linux running Librespot to stream Spotify on your speaker.
