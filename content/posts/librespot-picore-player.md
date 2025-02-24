@@ -79,7 +79,7 @@ wget ftp.fr.debian.org/debian/pool/main/g/gcc-10/libstdc++6_10.2.1-6_armhf.deb
 ### environment
 
 If you still in `downloads` folder go back with `cd ..` else `cd pcp-librespot`
-We need to configure the environement with a `sysroot` where we put all the libs needed for cross-compilation as librespot for arm can't use x86 libs.
+We need to configure the environment with a `sysroot` where we put all the libs needed for cross-compilation as librespot for arm can't use x86 libs.
 ```bash
 mkdir sysroot
 ```
@@ -167,7 +167,7 @@ echo "/usr/local/etc/init.d/librespot start" >> /opt/bootlocal.sh
 pcp bu
 ```
 
-reboot or launch the extention with
+reboot or launch the extension with
 ```bash
 tce-load -i pcp-librespot
 ```
