@@ -9,7 +9,8 @@ image: images/internet-explorer-11-logo.jpg
 
 I am working on a robot project with my brother. We share data (datasheets, pictures...) in a folder synchronized on dropbox.
 He only uses Windows and I am mainly using Linux (debian based distros with GNOME Desktop Environment to be precise).
-He tend to use Windows URL file to save wbe shortcut in a sharable way. But those file are not openable by default in Linux.
+He tends to use Windows URL files to save web shortcut in a sharable way. But those files are not openable by default in Linux.
+I want to open those `.url` files with a simple double click.
 
 **Here is a way to automatically open Microsoft Windows URL shortcut file in Linux default browser.**
 
