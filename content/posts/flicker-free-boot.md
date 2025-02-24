@@ -16,5 +16,5 @@ I successfully achieved that thanks to multiple tricks and pieces of knowledge t
 
 I'm based on `dunfell` branch for my Yocto distros. The boot process is based on UEFI (no more BIOS legacy stuff), Grub2, then Linux kernel with initramfs and then full GNU/Linux distro running from `/`.
 
-I tried to use pspalsh but it is cumbersome and animations are not that pretty. I decided to use plymouth as it is the default splash screen in all major distros (ubuntu, fedora...).
+I tried to use psplash but it is cumbersome and animations are not that pretty. I decided to use plymouth as it is the default splash screen in all major distros (ubuntu, fedora...).
 

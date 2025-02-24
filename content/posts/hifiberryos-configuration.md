@@ -5,7 +5,7 @@ description: "How to build librespot for picore player"
 image: https://www.hifiberry.com/wp-content/uploads/2020/01/filter.jpg
 ---
 
-# HifiBerry OS Customisations
+# HifiBerry OS Customizations
 
 Before moving to my custom version of piCorePlayer with my own Spotify extension I used to run HifiBerry on my raspberryPi.
 Here are some modifications I made to improve performances.
