@@ -44,3 +44,7 @@ brew install python3
 ```
 
 I follow most of the advices [here](https://github.com/drduh/macOS-Security-and-Privacy-Guide) to harden my configuration. Except from "phone home" stuff because I like imessage on my macbook.
+
+## Comments
+
+To give feedback, send an email to percevalsa [at] outlook dot com.

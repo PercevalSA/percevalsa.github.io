@@ -29,3 +29,7 @@ Here is the corresponding line in my `.devcontainer` file
   "source=/media/$HOST-USER/,target=/media/$USER/,type=bind,consistency=cached"
 ]
 ```
+
+## Comments
+
+To give feedback, send an email to percevalsa [at] outlook dot com.

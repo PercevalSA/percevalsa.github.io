@@ -81,3 +81,7 @@ Tadam! You can now open all `.url` files in your default browser by double click
 * [Open URL files in Linux](https://askubuntu.com/a/387741/1636114)
 * [Creating .desktop files](https://www.reddit.com/r/linux4noobs/comments/114w615/tutorial_creating_quick_and_dirty_desktop_files/)
 * [.desktop specifications](https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html)
+
+## Comments
+
+To give feedback, send an email to percevalsa [at] outlook dot com.

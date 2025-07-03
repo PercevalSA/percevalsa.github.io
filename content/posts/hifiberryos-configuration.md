@@ -61,3 +61,7 @@ After a reboot and we are good to go
 ```bash
 sudo reboot
 ```
+
+## Comments
+
+To give feedback, send an email to percevalsa [at] outlook dot com.

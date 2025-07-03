@@ -173,3 +173,7 @@ tce-load -i pcp-librespot
 ```
 
 And that's it. A fast booting Linux running Librespot to stream Spotify on your speaker.
+
+## Comments
+
+To give feedback, send an email to percevalsa [at] outlook dot com.

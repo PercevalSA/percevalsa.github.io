@@ -53,3 +53,7 @@ ExecStart=/usr/bin/bash -c "while [ ! -e /run/user/1000/.mutter-Xwaylandauth.* ]
 [Install]
 WantedBy=graphical-session.target
 ```
+
+## Comments
+
+To give feedback, send an email to percevalsa [at] outlook dot com.
