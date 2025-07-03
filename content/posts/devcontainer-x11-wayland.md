@@ -27,9 +27,8 @@ My devcontainer had this mount configuration
 ],
 ```
 
-{{< admonition type=note title="HOME vs USERPROFILE" >}}
-I'm working with people using windows computer. The dual notation `USERPROFILE` and `HOME` allows the mount to work both on Windows and Linux.
-{{< /admonition >}}
+> **"HOME vs USERPROFILE"** 
+> I'm working with people using windows computer. The dual notation `USERPROFILE` and `HOME` allows the mount to work both on Windows and Linux.
 
 
 # Solution
