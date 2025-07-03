@@ -15,10 +15,10 @@ pygmentsUseClasses = true
 
 [params]
   google_analytics_id = ""
-  twitter_handle = "PercevalSA"
   showAuthorOnHomepage = true
   showAuthorOnPosts = false
-  showPostsOnHomepage = false
+  showPostsOnHomepage = true
+  usePaginationOnHomepage = false
   addDot = true
   addFrame = true
   highlightColor = '#7b16ff'
