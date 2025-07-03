@@ -38,10 +38,3 @@ pygmentsUseClasses = true
     [markup.goldmark.parser.attribute]
       block = true # default is false
       title = true
-
-[menu]
-  [[menu.main]]
-    identifier = 'home'
-    name = 'Home'
-    url = '/'
-    weight = 1
