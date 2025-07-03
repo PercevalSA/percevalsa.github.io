@@ -10,9 +10,11 @@ image: https://avatars.githubusercontent.com/u/14821372?v=4
 
 I'm running fedora after running Ubuntu for a long time. For a project I need to run a X11 application in a devcontainer.
 This devcontainer needs an access to the `Xauthority` file in order to display items on the screen.
-On ubuntu, and `.Xauthority` file is automatically created byt he gnome session in the home folder of the user.
+On ubuntu, and `.Xauthority` file is automatically created by the gnome session in the home folder of the user.
+But on fedora, the `.Xauthority` file is created in `/run/user/1000/` and not in the home folder.
+This is a problem because the devcontainer is not able to access this file.
 
-My devcontainer had this mount configuration
+My mount configuration in the devcontainer settings: 
 ```json
 "mounts": [
     "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind,readonly,consistency=cached",
@@ -27,14 +29,16 @@ My devcontainer had this mount configuration
 ],
 ```
 
-> **"HOME vs USERPROFILE"** 
-> I'm working with people using windows computer. The dual notation `USERPROFILE` and `HOME` allows the mount to work both on Windows and Linux.
-
+> ℹ️ **`HOME` vs `USERPROFILE`**
+> <br>I'm working with people using windows computers. The dual notation `USERPROFILE` and `HOME` allows the mount to work on both Windows and Linux hosts.
+{.note}
 
 # Solution
-Create a systemd service that will create the `.Xauthority` file in the home folder of the user. So the devcontainer can access it.
-```bash
-% cat /etc/systemd/user/xauthority.service 
+
+Create a systemd service that will create the `.Xauthority` file in the home folder of the user. So the devcontainer can access it. It will be a symlink to the file created by the gnome session.
+
+`/etc/systemd/user/xauthority.service`
+```ini
 [Unit]
 Description=Create Xauthority to forward screen in devcontainers
 
