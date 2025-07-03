@@ -1,6 +1,5 @@
 ---
-title: I build stuff and dismount things
-description: I'm a computer enthusiast
+title: I build stuff and take things apart
 date: 2019-01-01
 menu:
   main:
@@ -8,9 +7,8 @@ menu:
     weight: 1
 ---
 
-I'm a computer enthusiast. I'm specialized in Linux and embedded systems. I like to dismount things in order to understand how they work.
-I like art, electronics and to automate things. 
+I’m Perceval — a computer enthusiast into Linux, embedded systems, and automation.
+I like understanding how things work by breaking them down and (sometimes) rebuilding them. I enjoy making stuff — sometimes it works, sometimes it’s just interesting. 
+If you're into cyber stuff and half-baked prototypes, you're in the right place.
 
-[I post about my personal projects and my findings on computer science, system administration and software development.](/posts/)
-
-Enjoy :)
+For feedback, questions, or suggestions, feel free to email me at **percevalsa at outlook dot com**.
