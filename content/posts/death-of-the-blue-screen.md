@@ -1,7 +1,7 @@
 ---
-title: "Blue Screen Of Death (BSOD) is dead, long live the BSOD"
+title: "BSOD is dead, long live the BSOD"
 date: 2025-07-05
-description: "Publishing all tech failures I have encountered in public spaces"
+description: "Publishing all tech failures and Blue Screen Of Death I have encountered in public spaces"
 image: https://upload.wikimedia.org/wikipedia/commons/3/3b/Windows_9X_BSOD.png
 ---
 
