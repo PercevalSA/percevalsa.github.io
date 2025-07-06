@@ -1,7 +1,7 @@
 ---
-title: "librespot on piCorePlayer"
+title: "build librespot for piCorePlayer"
 date: 2022-11-05
-description: "How to build librespot for piCorePlayer"
+description: "How to build an fast and up to date Spotify headless player for Raspberry Pi"
 image: images/picore-logo.png
 ---
 
