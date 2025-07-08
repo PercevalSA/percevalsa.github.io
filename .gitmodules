@@ -1,3 +1,4 @@
 [submodule "themes/hugo-winston-theme"]
 	path = themes/hugo-winston-theme
 	url = https://github.com/PercevalSA/hugo-winston-theme.git
+	branch = master
