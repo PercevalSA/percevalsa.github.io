@@ -12,4 +12,4 @@ To celebrate the life and death of the blue screen, I started an Instagram accou
 
 My Goal here is to shine a light on our digital fragility. We live surrounded by computers – they're in our coffee shops, airports, elevators, and even our refrigerators. When they fail (remember the [CrowdStrike chaos](https://en.wikipedia.org/wiki/2024_CrowdStrike-related_IT_outages)?), they remind us just how dependent we've become on these machines. We've built a world where a single crashed screen can bring entire systems to their knees, leaving us utterly helpless.
 
-You can find the account [on Instagram](https://www.instagram.com/dasbsod/).
+You can find the account [on Instagram](https://www.instagram.com/bluescreenirl).
