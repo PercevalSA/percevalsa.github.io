@@ -65,6 +65,8 @@ Once you are on the windows desktop you need to access the EFI partition. You ca
     - Right click on the EFI partition (the first in line) and select "Change drive letter and paths..."
     - Assign a drive letter to the partition and validate
 
+![Windows disk manager showing USB disk's EFI partition](images/windows-disk-manager.png)
+
 For more infos and details you can refer to [the official tutorial from microsoft](https://learn.microsoft.com/en-us/windows-server/storage/disk-management/change-a-drive-letter).
 
 If it does not work you (all options in right click menu are greyed out) you can use command line:
