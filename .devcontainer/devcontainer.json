@@ -1,0 +1,11 @@
+{
+	"name": "hugo",
+	"image": "mcr.microsoft.com/devcontainers/base:trixie",
+	"features": {
+		"ghcr.io/devcontainers/features/hugo:1": {
+			"extended": true,
+			"version": "latest"
+		}
+	},
+	"postStartCommand": "hugo server"
+}
