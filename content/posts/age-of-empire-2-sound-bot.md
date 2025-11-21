@@ -1,27 +1,29 @@
 ---
-title: "Age of Empire 2 sound bax as Telegram Bot"
+title: "Age of Empires II Sound Box on Telegram"
 date: 2025-09-10
-description: "I created a Telegram bot that sends you random Age of Empire 2 sounds and taunts"
+description: "A Telegram bot that sends random Age of Empires II sounds and taunts."
 image: https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/813780/capsule_616x353.jpg
 ---
 
 
-## Age of Empire 2 sound bot
+## Age of Empires II Sound Bot
 
-I have created a [Telegram bot](https://t.me/age_of_empires_2_bot) that sends you random Age of Empire 2 sounds and taunts.
+I built a [Telegram bot](https://t.me/age_of_empires_2_bot) that sends random Age of Empires II sounds and taunts.
 
-## Telegram Bot
+![Age of Empires II Sound Bot](/images/aoe2-telegram-bot.png)
 
-I used [python-telegram-bot library](https://python-telegram-bot.org/) to create the bot. The bot responds to the `/start` command and sends a welcome message. When the user sends commands to receive a specific or a random sound or taunt from the game.
+## Telegram bot
 
-I used the file cache system from telegram that allows you to refer to files by their file ID after the first upload. The bot does not need to re-upload the same sound file multiple times, saving bandwidth and improving performance.
+The bot is implemented with the [python-telegram-bot library](https://python-telegram-bot.org/). It responds to the `/start` command with a welcome message and supports commands to request either a specific sound or a random sound/taunt from the game.
 
-## Automation
+It uses Telegram's file caching system, which allows the bot to reference files by their file ID after the first upload. This avoids re-uploading the same sound files, saving bandwidth and improving performance.
 
-A python package is automaticlly built and deployed on PyPI using GitHub Actions whenever I push a new tag to the repository.
+## Automation and deployment
 
-I deployed the bot on a Oracle Cloud Free Tier server. I used [systemd](https://www.freedesktop.org/wiki/Software/systemd/) to manage the bot as a service, ensuring it starts on boot and restarts if it crashes. The bot handles cache in a persistent way, so the cache is not lost when the bot restarts.
+A Python package is automatically built and published to PyPI via GitHub Actions whenever I push a new tag to the repository.
 
-The bot downloads the sound files from its own GitHub repository at startup if they are not already present on the server. It allows a lightweight deployment without the need to embed all sound files in the python package.
+I deploy the bot to an Oracle Cloud Free Tier instance and use systemd to run it as a service so it starts on boot and restarts after crashes. The bot persists its cache to disk so cached file IDs survive restarts.
 
-The code for the bot is available on [GitHub](https://github.com/PercevalSA/aoe2-telegram-bot).
+At startup the bot downloads any missing sound files from its GitHub repository, enabling a lightweight deployment without embedding all sound files inside the Python package.
+
+The source code is available on [GitHub](https://github.com/PercevalSA/aoe2-telegram-bot).
