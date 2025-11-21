@@ -28,7 +28,7 @@ I could provide the direct link for the image download but it is only valid for 
 I thought I could use a Virtual Machine and connect the trackpad as Hardware Sharing. I directly used Gnome Boxes as it was already installed. I am used to Virtual Box but I wanted to try something different.
 I created a new Windows 10 VM with at least 4 CPU, 8GiB of RAM and an at least 40GiB disk. I installed windows using the previously downloaded ISO. Then I installed the Synaptics driver and the firmware upgrade tool from Lenovo website. I then enabled the trackpad hardware sharing using the virtual machine preferences menu in "peripheral and sharing".
 
-![Gnome Boxes preferences menu showing peripheral and sharing options](images/gnome-boxes-preferences.png)
+![Gnome Boxes preferences menu showing peripheral and sharing options](/images/gnome-boxes-preferences.png)
 
 The tool did not detected the touchpad. I guess the VM does not provide low level access to the touchpad hardware.
 
@@ -65,7 +65,7 @@ Once you are on the windows desktop you need to access the EFI partition. You ca
     - Right click on the EFI partition (the first in line) and select "Change drive letter and paths..."
     - Assign a drive letter to the partition and validate
 
-![Windows disk manager showing USB disk's EFI partition](images/windows-disk-manager.png)
+![Windows disk manager showing USB disk's EFI partition](/images/windows-disk-manager.png)
 
 For more infos and details you can refer to [the official tutorial from microsoft](https://learn.microsoft.com/en-us/windows-server/storage/disk-management/change-a-drive-letter).
 
