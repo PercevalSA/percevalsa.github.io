@@ -7,9 +7,12 @@ draft: true
 ---
 
 
-# Age of Empire 2 sound bot
+## Age of Empire 2 sound bot
+
 I have created a [Telegram bot](https://t.me/age_of_empires_2_bot) that sends you random Age of Empire 2 sounds and taunts.
 
 ## Telegram Bot
 
-I used [python-telegram-bot library]() to
+I used [python-telegram-bot library](https://python-telegram-bot.org/) to create the bot. The bot responds to the `/start` command and sends a welcome message. When the user sends commands to receive a specific or a random sound or taunt from the game.
+
+I used the file cache system from telegram that allows you to refer to files by their file ID after the first upload. The bot does not need to re-upload the same sound file multiple times, saving bandwidth and improving performance.
