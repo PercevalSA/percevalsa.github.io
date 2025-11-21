@@ -1,6 +1,14 @@
 {
 	"name": "hugo",
 	"image": "mcr.microsoft.com/devcontainers/base:trixie",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"streetsidesoftware.code-spell-checker",
+				"gitlens.gitlens"
+			]
+		}
+	},
 	"features": {
 		"ghcr.io/devcontainers/features/hugo:1": {
 			"extended": true,
